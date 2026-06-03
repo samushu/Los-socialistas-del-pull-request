@@ -1,0 +1,741 @@
+/* ============================================================
+   ESTILOS.CSS — Tienda Los Socialistas
+   Estilo: Colorido y vibrante
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── VARIABLES ─────────────────────────────────────────── */
+:root {
+  --verde:      #00C896;
+  --azul:       #3B6EF8;
+  --naranja:    #FF6B35;
+  --amarillo:   #FFD23F;
+  --rosa:       #FF4D8D;
+  --oscuro:     #0F1117;
+  --gris-dark:  #1E2130;
+  --gris-mid:   #2D3149;
+  --gris-light: #F0F2FF;
+  --blanco:     #FFFFFF;
+  --texto:      #1A1D2E;
+  --texto-soft: #6B7290;
+  --radio:      12px;
+  --radio-lg:   20px;
+  --sombra:     0 4px 24px rgba(59,110,248,0.10);
+  --sombra-lg:  0 8px 40px rgba(59,110,248,0.18);
+  --trans:      all 0.22s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--gris-light);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────── */
+.navbar {
+  background: var(--oscuro);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.navbar-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--blanco);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar-brand span { color: var(--verde); }
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+.navbar-nav a {
+  color: #A0A8C8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  transition: var(--trans);
+}
+.navbar-nav a:hover, .navbar-nav a.active {
+  color: var(--blanco);
+  background: var(--gris-mid);
+}
+
+/* ── LAYOUT ─────────────────────────────────────────────── */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+/* ── PAGE HEADER ────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: var(--texto);
+  letter-spacing: -0.5px;
+}
+.page-header h1 span {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--verde);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+/* ── CARDS ──────────────────────────────────────────────── */
+.card {
+  background: var(--blanco);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra);
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: var(--texto);
+}
+
+/* ── TABLA ──────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; border-radius: var(--radio); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+thead tr {
+  background: var(--oscuro);
+  color: var(--blanco);
+}
+thead th {
+  padding: 0.9rem 1.1rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody tr {
+  border-bottom: 1px solid #EAEDF5;
+  transition: var(--trans);
+}
+tbody tr:hover { background: #F7F8FF; }
+tbody td {
+  padding: 0.85rem 1.1rem;
+  color: var(--texto);
+  vertical-align: middle;
+}
+tbody tr:last-child { border-bottom: none; }
+
+/* ── BADGES ─────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.badge-verde   { background: #D0FFF3; color: #007A5A; }
+.badge-azul    { background: #DBE8FF; color: #1E4FC2; }
+.badge-naranja { background: #FFE8DE; color: #C0401A; }
+.badge-amarillo{ background: #FFF5CC; color: #8A6800; }
+.badge-rosa    { background: #FFE0EE; color: #A0184F; }
+
+/* ── BOTONES ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radio);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: var(--trans);
+}
+.btn-primary {
+  background: var(--azul);
+  color: var(--blanco);
+}
+.btn-primary:hover { background: #2A5AE8; box-shadow: 0 4px 16px rgba(59,110,248,0.35); transform: translateY(-1px); }
+
+.btn-success {
+  background: var(--verde);
+  color: var(--blanco);
+}
+.btn-success:hover { background: #00A87E; box-shadow: 0 4px 16px rgba(0,200,150,0.35); transform: translateY(-1px); }
+
+.btn-danger {
+  background: #FFE8E8;
+  color: #C0182A;
+}
+.btn-danger:hover { background: #FFCECE; }
+
+.btn-warning {
+  background: var(--amarillo);
+  color: #6A4E00;
+}
+.btn-warning:hover { background: #F5C800; }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--azul);
+  color: var(--azul);
+}
+.btn-outline:hover { background: var(--azul); color: var(--blanco); }
+
+.btn-sm { padding: 0.35rem 0.8rem; font-size: 0.82rem; border-radius: 8px; }
+
+/* ── FORMULARIOS ────────────────────────────────────────── */
+.form-group { margin-bottom: 1.3rem; }
+.form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+  color: var(--texto-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.form-control {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #E2E6F3;
+  border-radius: var(--radio);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+  background: var(--blanco);
+  transition: var(--trans);
+  outline: none;
+}
+.form-control:focus {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 4px rgba(59,110,248,0.1);
+}
+.form-control::placeholder { color: #B0B8D4; }
+select.form-control { cursor: pointer; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* ── ALERTAS / MENSAJES ─────────────────────────────────── */
+.alert {
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radio);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.alert-success { background: #D0FFF3; color: #007A5A; border-left: 4px solid var(--verde); }
+.alert-error   { background: #FFE8E8; color: #C0182A; border-left: 4px solid var(--rosa); }
+.alert-warning { background: #FFF5CC; color: #8A6800; border-left: 4px solid var(--amarillo); }
+
+/* ── EMPTY STATE ────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--texto-soft);
+}
+.empty-state .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state p { font-size: 1rem; }
+
+/* ── ACCIONES TABLA ─────────────────────────────────────── */
+.table-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+/* ── BREADCRUMB ─────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--texto-soft);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--azul); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .sep { color: #C0C8E0; }
+
+/* ── COLORES POR CATEGORÍA ──────────────────────────────── */
+.cat-papeleria   { background: #DBE8FF; color: #1E4FC2; }
+.cat-drogueria   { background: #D0FFF3; color: #007A5A; }
+.cat-supermercado{ background: #FFF5CC; color: #8A6800; }
+.cat-aseo        { background: #FFE0EE; color: #A0184F; }
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--texto-soft);
+  border-top: 1px solid #E2E6F3;
+  margin-top: auto;
+}
+/* ============================================================
+   ESTILOS.CSS — Tienda Los Socialistas
+   Estilo: Colorido y vibrante
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── VARIABLES ─────────────────────────────────────────── */
+:root {
+  --verde:      #00C896;
+  --azul:       #3B6EF8;
+  --naranja:    #FF6B35;
+  --amarillo:   #FFD23F;
+  --rosa:       #FF4D8D;
+  --oscuro:     #0F1117;
+  --gris-dark:  #1E2130;
+  --gris-mid:   #2D3149;
+  --gris-light: #F0F2FF;
+  --blanco:     #FFFFFF;
+  --texto:      #1A1D2E;
+  --texto-soft: #6B7290;
+  --radio:      12px;
+  --radio-lg:   20px;
+  --sombra:     0 4px 24px rgba(59,110,248,0.10);
+  --sombra-lg:  0 8px 40px rgba(59,110,248,0.18);
+  --trans:      all 0.22s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--gris-light);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────── */
+.navbar {
+  background: var(--oscuro);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.navbar-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--blanco);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar-brand span { color: var(--verde); }
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+.navbar-nav a {
+  color: #A0A8C8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  transition: var(--trans);
+}
+.navbar-nav a:hover, .navbar-nav a.active {
+  color: var(--blanco);
+  background: var(--gris-mid);
+}
+
+/* ── LAYOUT ─────────────────────────────────────────────── */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+/* ── PAGE HEADER ────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: var(--texto);
+  letter-spacing: -0.5px;
+}
+.page-header h1 span {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--verde);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+/* ── CARDS ──────────────────────────────────────────────── */
+.card {
+  background: var(--blanco);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra);
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: var(--texto);
+}
+
+/* ── TABLA ──────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; border-radius: var(--radio); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+thead tr {
+  background: var(--oscuro);
+  color: var(--blanco);
+}
+thead th {
+  padding: 0.9rem 1.1rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody tr {
+  border-bottom: 1px solid #EAEDF5;
+  transition: var(--trans);
+}
+tbody tr:hover { background: #F7F8FF; }
+tbody td {
+  padding: 0.85rem 1.1rem;
+  color: var(--texto);
+  vertical-align: middle;
+}
+tbody tr:last-child { border-bottom: none; }
+
+/* ── BADGES ─────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.badge-verde   { background: #D0FFF3; color: #007A5A; }
+.badge-azul    { background: #DBE8FF; color: #1E4FC2; }
+.badge-naranja { background: #FFE8DE; color: #C0401A; }
+.badge-amarillo{ background: #FFF5CC; color: #8A6800; }
+.badge-rosa    { background: #FFE0EE; color: #A0184F; }
+
+/* ── BOTONES ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radio);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: var(--trans);
+}
+.btn-primary {
+  background: var(--azul);
+  color: var(--blanco);
+}
+.btn-primary:hover { background: #2A5AE8; box-shadow: 0 4px 16px rgba(59,110,248,0.35); transform: translateY(-1px); }
+
+.btn-success {
+  background: var(--verde);
+  color: var(--blanco);
+}
+.btn-success:hover { background: #00A87E; box-shadow: 0 4px 16px rgba(0,200,150,0.35); transform: translateY(-1px); }
+
+.btn-danger {
+  background: #FFE8E8;
+  color: #C0182A;
+}
+.btn-danger:hover { background: #FFCECE; }
+
+.btn-warning {
+  background: var(--amarillo);
+  color: #6A4E00;
+}
+.btn-warning:hover { background: #F5C800; }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--azul);
+  color: var(--azul);
+}
+.btn-outline:hover { background: var(--azul); color: var(--blanco); }
+
+.btn-sm { padding: 0.35rem 0.8rem; font-size: 0.82rem; border-radius: 8px; }
+
+/* ── FORMULARIOS ────────────────────────────────────────── */
+.form-group { margin-bottom: 1.3rem; }
+.form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+  color: var(--texto-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.form-control {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #E2E6F3;
+  border-radius: var(--radio);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+  background: var(--blanco);
+  transition: var(--trans);
+  outline: none;
+}
+.form-control:focus {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 4px rgba(59,110,248,0.1);
+}
+.form-control::placeholder { color: #B0B8D4; }
+select.form-control { cursor: pointer; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* ── ALERTAS / MENSAJES ─────────────────────────────────── */
+.alert {
+  padding: 0.9rem 1.2rem;
+  border-radius: var(--radio);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.alert-success { background: #D0FFF3; color: #007A5A; border-left: 4px solid var(--verde); }
+.alert-error   { background: #FFE8E8; color: #C0182A; border-left: 4px solid var(--rosa); }
+.alert-warning { background: #FFF5CC; color: #8A6800; border-left: 4px solid var(--amarillo); }
+
+/* ── EMPTY STATE ────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--texto-soft);
+}
+.empty-state .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state p { font-size: 1rem; }
+
+/* ── ACCIONES TABLA ─────────────────────────────────────── */
+.table-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+/* ── BREADCRUMB ─────────────────────────────────────────── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--texto-soft);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--azul); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .sep { color: #C0C8E0; }
+
+/* ── COLORES POR CATEGORÍA ──────────────────────────────── */
+.cat-papeleria   { background: #DBE8FF; color: #1E4FC2; }
+.cat-drogueria   { background: #D0FFF3; color: #007A5A; }
+.cat-supermercado{ background: #FFF5CC; color: #8A6800; }
+.cat-aseo        { background: #FFE0EE; color: #A0184F; }
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--texto-soft);
+  border-top: 1px solid #E2E6F3;
+  margin-top: auto;
+}
+
+/* ── MÓDULO CLIENTES ────────────────────────────────────── */
+
+/* Nombre del cliente en tabla */
+.cliente-nombre strong {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+}
+
+/* Datos de contacto inline */
+.dato-contacto {
+  font-size: 0.88rem;
+  color: var(--texto-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Texto vacío / sin dato */
+.texto-vacio {
+  font-size: 0.85rem;
+  color: #B0B8D4;
+  font-style: italic;
+}
+
+/* Pie de tabla con contador */
+.tabla-footer {
+  padding: 0.9rem 1.1rem 0;
+  border-top: 1px solid #EAEDF5;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Formulario con ancho máximo cómodo */
+.form-card {
+  max-width: 680px;
+}
+
+/* Hint debajo de un input */
+.form-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--texto-soft);
+  margin-top: 0.3rem;
+}
+
+/* Input en modo readonly — feedback visual */
+.form-control[readonly] {
+  background: var(--gris-light);
+  border-color: #D0D6EC;
+  color: var(--texto-soft);
+  cursor: not-allowed;
+}
+
+/* Banner informativo (editar: cédula inmutable) */
+.info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #EEF2FF;
+  border-left: 4px solid var(--azul);
+  border-radius: var(--radio);
+  padding: 0.85rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--texto);
+  margin-bottom: 1.4rem;
+}
+.info-banner-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* ── HISTORIAL DE COMPRAS (Vista/Cliente/compras.php) ───── */
+
+.monto-total {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+}
+
+.monto-destacado {
+  font-size: 1.05rem;
+  color: var(--verde);
+}
+
+tfoot tr.fila-total {
+  background: var(--gris-light);
+  border-top: 2px solid #D0D6EC;
+}
+tfoot tr.fila-total td {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.92rem;
+  color: var(--texto);
+}
