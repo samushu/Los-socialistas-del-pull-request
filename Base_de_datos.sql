@@ -1,3 +1,6 @@
+CREATE DATABASE los_socialistas;
+USE los_socialistas;
+
 -- Crear tabla de Categorías
 CREATE TABLE Categoria (
     id_categoria INT PRIMARY KEY AUTO_INCREMENT,

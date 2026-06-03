@@ -21,7 +21,7 @@ $acciones = [
     'CompraController'    => ['index', 'nueva', 'procesar', 'resumen', 'historial', 'eliminar'],
     'ProductoController'  => ['index', 'crear', 'guardar', 'editar', 'actualizar', 'eliminar'],
     'ProveedorController' => ['index', 'crear', 'guardar', 'editar', 'actualizar', 'eliminar',
-                              'asociar', 'guardarAsociacion', 'registrarPago'],
+                          'asociar', 'guardarAsociacion', 'registrarPago', 'desasociar'],
     'ReportesController'  => ['index', 'financiero', 'clientesFrecuentes', 'clientesUnicos',
                               'clienteMasFrecuente', 'stockMinimo', 'productosTop'],
 ];

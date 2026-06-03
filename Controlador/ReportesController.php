@@ -29,7 +29,7 @@ class ReportesController {
         $ingresos_mes       = $this->reportesModel->getIngresosPorMes();
         $productos_top      = $this->reportesModel->getProductosMasVendidos(5);
         $balance            = $this->reportesModel->getBalance();
-        require __DIR__ . '/../Vista/Reporte/index.php';
+        require __DIR__ . '/../Vista/Reporte/_form.php';
     }
 
     // ── INGRESOS Y GASTOS ─────────────────────────────────

@@ -10,7 +10,7 @@ class Database {
     private $host   = 'localhost';
     private $db     = 'los_socialistas';   // Cambia al nombre de tu BD
     private $user   = 'root';
-    private $pass   = '';
+    private $pass   = 'Choripansucio12';
     private $charset = 'utf8mb4';
 
     private $pdo;

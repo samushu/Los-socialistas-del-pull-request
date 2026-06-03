@@ -14,11 +14,11 @@ class ClienteController {
 
     public function index(): void {
         $clientes = $this->clienteModel->getAll();
-        require __DIR__ . '/../Vista/clientes/index.php';
+        require __DIR__ . '/../Vista/Clientes/cliente.php';
     }
 
     public function crear(): void {
-        require __DIR__ . '/../Vista/clientes/form.php';
+        require __DIR__ . '/../Vista/Clientes/_form.php';
     }
 
     public function guardar(): void {
@@ -44,7 +44,7 @@ class ClienteController {
         $cedula  = $_GET['cedula'] ?? '';
         $cliente = $this->clienteModel->getByCedula($cedula);
         if (!$cliente) { header('Location: index.php?c=cliente'); exit; }
-        require __DIR__ . '/../Vista/clientes/form.php';
+        require __DIR__ . '/../Vista/Clientes/_form.php';
     }
 
     public function actualizar(): void {

@@ -21,14 +21,14 @@ class CompraController {
     // ── LISTAR COMPRAS ────────────────────────────────────
     public function index(): void {
         $compras = $this->compraModel->getAll();
-        require __DIR__ . '/../Vista/compras/index.php';
+        require __DIR__ . '/../Vista/Compras/compras.php';
     }
 
     // ── FORMULARIO NUEVA COMPRA ───────────────────────────
     public function nueva(): void {
         $clientes   = $this->clienteModel->getAll();
         $productos  = $this->productoModel->getAll();
-        require __DIR__ . '/../Vista/compras/form.php';
+        require __DIR__ . '/../Vista/Compras/_form.php';
     }
 
     // ── PROCESAR COMPRA (con transacción) ─────────────────
@@ -108,7 +108,7 @@ class CompraController {
         if (empty($detalle)) {
             header('Location: index.php?c=compra'); exit;
         }
-        require __DIR__ . '/../Vista/compras/resumen.php';
+        require __DIR__ . '/../Vista/Compras/resumen.php';
     }
 
     // ── HISTORIAL DE UN CLIENTE ───────────────────────────
@@ -116,7 +116,7 @@ class CompraController {
         $cedula  = $_GET['cedula'] ?? '';
         $cliente = $this->clienteModel->getByCedula($cedula);
         $compras = $this->compraModel->getByCliente($cedula);
-        require __DIR__ . '/../Vista/compras/historial.php';
+        require __DIR__ . '/../Vista/Compras/resumen.php';
     }
 
     // ── ELIMINAR COMPRA ───────────────────────────────────

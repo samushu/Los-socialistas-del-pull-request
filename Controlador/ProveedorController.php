@@ -5,7 +5,7 @@
 // ============================================================
 require_once __DIR__ . '/../Modelo/Proveedor.php';
 require_once __DIR__ . '/../Modelo/Producto.php';
-require_once __DIR__ . '/../Modelo/PagoProveedor.php';
+require_once __DIR__ . '/../Modelo/Pagoproveedor.php';
 
 class ProveedorController {
     private Proveedor     $proveedorModel;
@@ -20,11 +20,11 @@ class ProveedorController {
 
     public function index(): void {
         $proveedores = $this->proveedorModel->getAll();
-        require __DIR__ . '/../Vista/proveedores/index.php';
+        require __DIR__ . '/../Vista/Proveedor/proveedor.php';
     }
 
     public function crear(): void {
-        require __DIR__ . '/../Vista/proveedores/form.php';
+        require __DIR__ . '/../Vista/Proveedor/_form.php';
     }
 
     public function guardar(): void {
@@ -48,7 +48,7 @@ class ProveedorController {
         $id        = (int) ($_GET['id'] ?? 0);
         $proveedor = $this->proveedorModel->getById($id);
         if (!$proveedor) { header('Location: index.php?c=proveedor'); exit; }
-        require __DIR__ . '/../Vista/proveedores/form.php';
+        require __DIR__ . '/../Vista/Proveedor/_form.php';
     }
 
     public function actualizar(): void {
@@ -121,6 +121,13 @@ class ProveedorController {
             $_SESSION['msg'] = ['tipo' => 'error', 'texto' => 'Error al registrar el pago.'];
         }
         header("Location: index.php?c=proveedor"); exit;
+    }
+    
+    public function desasociar(): void {
+    $id_proveedor = (int) ($_GET['id_proveedor'] ?? 0);
+    $id_producto  = (int) ($_GET['id_producto']  ?? 0);
+    $this->proveedorModel->desasociarProducto($id_producto, $id_proveedor);
+    header("Location: index.php?c=proveedor&a=asociar&id={$id_proveedor}"); exit;
     }
 }
 ?>

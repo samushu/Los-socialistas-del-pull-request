@@ -20,14 +20,14 @@ class ProductoController {
         $productos   = $this->productoModel->getAll();
         $stock_bajo  = $this->productoModel->getStockBajo();
         $categorias  = $this->categoriaModel->getAll();
-        require __DIR__ . '/../Vista/productos/index.php';
+        require __DIR__ . '/../Vista/producto/producto.php';
     }
 
     // ── FORMULARIO CREAR ──────────────────────────────────
     public function crear(): void {
         $categorias = $this->categoriaModel->getAll();
         $impuestos  = Producto::IMPUESTOS;
-        require __DIR__ . '/../Vista/productos/form.php';
+        require __DIR__ . '/../Vista/producto/_form.php';
     }
 
     // ── PROCESAR CREACIÓN ─────────────────────────────────
@@ -67,7 +67,7 @@ class ProductoController {
         if (!$producto) {
             header('Location: index.php?c=producto'); exit;
         }
-        require __DIR__ . '/../Vista/productos/form.php';
+        require __DIR__ . '/../Vista/producto/_form.php';
     }
 
     // ── PROCESAR ACTUALIZACIÓN ────────────────────────────

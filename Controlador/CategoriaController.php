@@ -13,11 +13,11 @@ class CategoriaController {
 
     public function index(): void {
         $categorias = $this->categoriaModel->getAll();
-        require __DIR__ . '/../Vista/categorias/index.php';
+        require __DIR__ . '/../Vista/Categoria/categoria.php';
     }
 
     public function crear(): void {
-        require __DIR__ . '/../Vista/categorias/form.php';
+        require __DIR__ . '/../Vista/Categoria/_form.php';
     }
 
     public function guardar(): void {
@@ -37,7 +37,7 @@ class CategoriaController {
         $id        = (int) ($_GET['id'] ?? 0);
         $categoria = $this->categoriaModel->getById($id);
         if (!$categoria) { header('Location: index.php?c=categoria'); exit; }
-        require __DIR__ . '/../Vista/categorias/form.php';
+        require __DIR__ . '/../Vista/Categoria/_form.php';
     }
 
     public function actualizar(): void {
