@@ -130,4 +130,3 @@ class CompraController {
         header('Location: index.php?c=compra'); exit;
     }
 }
-?>
