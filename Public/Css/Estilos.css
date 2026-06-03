@@ -739,3 +739,56 @@ tfoot tr.fila-total td {
   font-size: 0.92rem;
   color: var(--texto);
 }
+/* ============================================================
+   ESTILOS ADICIONALES — Vista/Compras
+   Agregar al final de Public/Css/Estilos.css
+   ============================================================ */
+ 
+/* Título de sección dentro de una card (ej: "Datos de la compra") */
+.card-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary, #555);
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  letter-spacing: 0.02em;
+}
+ /* ============================================================
+   ESTILOS ADICIONALES — Vista/Producto
+   Agregar al final de Public/Css/Estilos.css
+   ============================================================ */
+ 
+/* Fila de tabla con stock bajo — fondo sutil en rojo/naranja */
+tr.fila-alerta {
+  background-color: rgba(239, 68, 68, 0.06);
+}
+ 
+tr.fila-alerta:hover {
+  background-color: rgba(239, 68, 68, 0.12);
+}
+ /* ============================================================
+   ESTILOS ADICIONALES
+   Pegar al final de Public/Css/Estilos.css
+   ============================================================ */
+ 
+/* Titulo de seccion dentro de una card */
+.card-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary, #555);
+    margin: 0 0 1.2rem 0;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border, #e5e7eb);
+    letter-spacing: 0.02em;
+}
+ 
+/* Fila de tabla con stock bajo */
+tr.fila-alerta {
+    background-color: rgba(239, 68, 68, 0.06);
+}
+ 
+tr.fila-alerta:hover {
+    background-color: rgba(239, 68, 68, 0.12);
+}
+ 

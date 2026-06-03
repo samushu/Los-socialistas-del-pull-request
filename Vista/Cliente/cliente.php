@@ -13,7 +13,7 @@ $ruta_css = '../Public/Css/Estilos.css';
 <body>
  
 <nav class="navbar">
-  <a href="index.php" class="navbar-brand">🛒 <span>Los</span>Socialistas</a>
+  <a href="index.php" class="navbar-brand"> <span>Los</span>Socialistas</a>
   <ul class="navbar-nav">
     <li><a href="index.php?c=reporte">Dashboard</a></li>
     <li><a href="index.php?c=categoria">Categorías</a></li>
@@ -51,7 +51,7 @@ $ruta_css = '../Public/Css/Estilos.css';
   <div class="card">
     <?php if (empty($clientes)): ?>
       <div class="empty-state">
-        <div class="empty-icon">👤</div>
+        <div class="empty-icon"></div>
         <p>No hay clientes registrados aún.</p>
       </div>
     <?php else: ?>
@@ -81,14 +81,14 @@ $ruta_css = '../Public/Css/Estilos.css';
               </td>
               <td>
                 <?php if (!empty($cli['telefono'])): ?>
-                  <span class="dato-contacto">📞 <?= htmlspecialchars($cli['telefono']) ?></span>
+                  <span class="dato-contacto"> <?= htmlspecialchars($cli['telefono']) ?></span>
                 <?php else: ?>
                   <span class="texto-vacio">—</span>
                 <?php endif; ?>
               </td>
               <td>
                 <?php if (!empty($cli['correo'])): ?>
-                  <span class="dato-contacto">✉️ <?= htmlspecialchars($cli['correo']) ?></span>
+                  <span class="dato-contacto"> <?= htmlspecialchars($cli['correo']) ?></span>
                 <?php else: ?>
                   <span class="texto-vacio">—</span>
                 <?php endif; ?>
@@ -96,13 +96,13 @@ $ruta_css = '../Public/Css/Estilos.css';
               <td>
                 <div class="table-actions">
                   <a href="index.php?c=compra&a=historial&cedula=<?= urlencode($cli['cedula']) ?>"
-                     class="btn btn-primary btn-sm">🧾 Compras</a>
+                     class="btn btn-primary btn-sm"> Compras</a>
                   <a href="index.php?c=cliente&a=editar&cedula=<?= urlencode($cli['cedula']) ?>"
-                     class="btn btn-warning btn-sm">✏️ Editar</a>
+                     class="btn btn-warning btn-sm"> Editar</a>
                   <a href="index.php?c=cliente&a=eliminar&cedula=<?= urlencode($cli['cedula']) ?>"
                      class="btn btn-danger btn-sm"
                      onclick="return confirm('¿Eliminar al cliente <?= htmlspecialchars($cli['nombre'] . ' ' . $cli['apellido']) ?>?')">
-                     🗑️ Eliminar</a>
+                      Eliminar</a>
                 </div>
               </td>
             </tr>

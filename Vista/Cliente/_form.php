@@ -87,7 +87,7 @@ $titulo   = $editando ? 'Editar cliente' : 'Nuevo cliente';
  
   <div style="display:flex; gap:0.8rem; margin-top:1.5rem;">
     <button type="submit" class="btn btn-success">
-      <?= $editando ? '💾 Guardar cambios' : '✅ Registrar cliente' ?>
+      <?= $editando ? ' Guardar cambios' : ' Registrar cliente' ?>
     </button>
     <a href="index.php?c=cliente" class="btn btn-outline">Cancelar</a>
   </div>

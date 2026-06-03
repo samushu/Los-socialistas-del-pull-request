@@ -13,7 +13,7 @@ $ruta_css = '../Public/Css/Estilos.css';
 <body>
  
 <nav class="navbar">
-  <a href="index.php" class="navbar-brand">🛒 <span>Los</span>Socialistas</a>
+  <a href="index.php" class="navbar-brand"> <span>Los</span>Socialistas</a>
   <ul class="navbar-nav">
     <li><a href="index.php?c=reporte">Dashboard</a></li>
     <li><a href="index.php?c=categoria">Categorías</a></li>
@@ -43,14 +43,14 @@ $ruta_css = '../Public/Css/Estilos.css';
   </div>
  
   <div class="info-banner" style="margin-bottom:1.8rem;">
-    <span class="info-banner-icon">🪪</span>
+    <span class="info-banner-icon"></span>
     <div style="display:flex; gap:2rem; flex-wrap:wrap;">
       <span><strong>Cédula:</strong> <?= htmlspecialchars($cliente['cedula']) ?></span>
       <?php if (!empty($cliente['telefono'])): ?>
-        <span>📞 <?= htmlspecialchars($cliente['telefono']) ?></span>
+        <span> <?= htmlspecialchars($cliente['telefono']) ?></span>
       <?php endif; ?>
       <?php if (!empty($cliente['correo'])): ?>
-        <span>✉️ <?= htmlspecialchars($cliente['correo']) ?></span>
+        <span> <?= htmlspecialchars($cliente['correo']) ?></span>
       <?php endif; ?>
     </div>
   </div>
@@ -68,7 +68,7 @@ $ruta_css = '../Public/Css/Estilos.css';
   <div class="card">
     <?php if (empty($compras)): ?>
       <div class="empty-state">
-        <div class="empty-icon">🧾</div>
+        <div class="empty-icon"></div>
         <p>Este cliente no tiene compras registradas aún.</p>
       </div>
     <?php else: ?>
@@ -94,7 +94,7 @@ $ruta_css = '../Public/Css/Estilos.css';
                 <span class="badge badge-azul">#<?= $compra['id_compra'] ?></span>
               </td>
               <td>
-                <span class="dato-contacto">📅 <?= date('d/m/Y', strtotime($compra['fecha'])) ?></span>
+                <span class="dato-contacto"> <?= date('d/m/Y', strtotime($compra['fecha'])) ?></span>
               </td>
               <td>
                 <span class="badge badge-verde"><?= $compra['num_productos'] ?> ítem<?= $compra['num_productos'] != 1 ? 's' : '' ?></span>
@@ -105,11 +105,11 @@ $ruta_css = '../Public/Css/Estilos.css';
               <td>
                 <div class="table-actions">
                   <a href="index.php?c=compra&a=resumen&id=<?= $compra['id_compra'] ?>"
-                     class="btn btn-primary btn-sm">🔍 Ver resumen</a>
+                     class="btn btn-primary btn-sm"> Ver resumen</a>
                   <a href="index.php?c=compra&a=eliminar&id=<?= $compra['id_compra'] ?>"
                      class="btn btn-danger btn-sm"
                      onclick="return confirm('¿Eliminar la compra #<?= $compra['id_compra'] ?>?')">
-                     🗑️ Eliminar</a>
+                      Eliminar</a>
                 </div>
               </td>
             </tr>
